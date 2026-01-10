@@ -1,35 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Memoria Ludus</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-    <div class ="introduction">
-    <h1>Memoria Ludus</h1>
-    <p>Welcome to Memoria Ludus! Test your memory by taking part in a simple game. Will you remember to be victorius?</p>
-    </div>
+      <div class="introduction">
+        <h1>Memoria Ludus</h1>
+        <p>
+          Welcome to Memoria Ludus! Test your memory by taking part in a simple
+          game. Will you remember to be victorius?
+        </p>
+      </div>
     </header>
 
     <main>
-        <div class ="quote">
+      <div class="quote">
         <h2>Nothing is ever really lost to us as long as we remember it.</h2>
         <h3>L.M. Montgomery</h3>
+      </div>
+
+      <section class="memory-game">
+        <h2>The Game</h2>
+
+          <p class="game-instructions">
+          You have 30 seconds to memorise the position of the cards and then
+          correctly match the cards to their locations. Each card correctly
+          matched is worth 3 points.
+        </p>
+
+        <div class="game-info">
+          <p>Moves:</p>
+          <p>Matches:</p>
+          <p>Score:</p>
+          <p>Time remaining:</p>
         </div>
 
+        <div class="game-area" id="game-area"></div>
+        <p class="game message"></p>
+      
+      </section>
     </main>
 
     <footer>
-        <p>Social Media</p>
-        <div class="social">
-        <a href ="https://www.instagram.com" target="_blank">Instagram</a>
-        <a href ="https://www.twitter.com" target="_blank">Twitter</a>
-        <a href ="https://www.facebook.com" target="_blank">Facebook</a>
-        </div>
+      <p>Social Media</p>
+      <div class="social">
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        <a href="https://www.twitter.com" target="_blank">Twitter</a>
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+      </div>
     </footer>
-<script src="assets/js/script.js"></script>    
-</body>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
