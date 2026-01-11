@@ -14,7 +14,7 @@
         <nav class="menu">
         <a href="index.html">Home</a>
         <a href="high-scores.html">High Scores</a>
-        <a href="FAQ.html">FAQ</a>
+        <a href="faq.html">FAQ</a>
         </nav>
         <p>
           Welcome to Memoria Ludus! Test your memory by taking part in a simple
@@ -24,10 +24,10 @@
     </header>
 
     <main>
-      <div class="quote">
-        <h2>"Nothing is ever really lost to us as long as we remember it.</h2>
-        <h3>L.M. Montgomery"</h3>
-      </div>
+      <blockquote class="quote">
+        <p>"Nothing is ever really lost to us as long as we remember it."</p>
+        <cite>L.M. Montgomery</cite>
+      </blockquote>
 
       <section class="memory-game">
         <h2>The Game</h2>
@@ -39,14 +39,14 @@
         </p>
 
         <div class="game-info">
-          <p>Moves:</p>
-          <p>Matches:</p>
-          <p>Score:</p>
-          <p>Time remaining:</p>
+          <p>Moves:<span id="moves">0</span></p>
+          <p>Matches:<span id="matches">0</span></p>
+          <p>Score:<span id="score">0</span></p>
+          <p>Time remaining:<span id="time">30</span></p>
         </div>
 
         <div class="game-area" id="game-area"></div>
-        <p class="game-message"></p>
+        <p class="game-message" id="game-message" aria-live="polite"></p>
       
       </section>
     </main>
@@ -61,7 +61,7 @@
 
         <p class="copyright">Memoria Ludus 2026©</p>
 
-        <section class="Contact">
+        <section class="contact">
         <h3>Contact us:</h3>
         <p>Email: MemoriaLudus@gmail.com</p>
         </section>
