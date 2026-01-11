@@ -4,3 +4,29 @@
     gap: 12px;
     margin-top: 20px;
 }
+
+.banner {
+    position: relative; 
+}
+
+.banner-img {
+    width: 100%;
+    height: 35vh;
+    object-fit: cover;
+}
+
+html {
+    background-color: lightgoldenrodyellow;
+}
+
+.banner-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+}
