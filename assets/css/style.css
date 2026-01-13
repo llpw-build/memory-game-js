@@ -141,3 +141,28 @@ footer {
     align-items: center;
     flex-direction: row;
 }
+
+.reflect-area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.reflect-title {
+    padding-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.reflect-text {
+    padding-left: 20px;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.reflect-image {
+padding-right: 20px;
+width: 200px;
+height: auto;
+}
