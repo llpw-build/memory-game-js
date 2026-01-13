@@ -9,6 +9,7 @@
     position: relative; 
     height: 400px;
     width: 100%;
+    display: flex;
 }
 
 .banner-img {
@@ -22,9 +23,9 @@ html {
 }
 
 .banner-text {
+    display: flex;
     position: absolute;
     inset: 0;
-    display: flex;
     flex-direction: column;
     justify-content: baseline;
     align-items: center;
@@ -35,11 +36,11 @@ html {
 }
 
 .menu {
+    display: flex;
     position: absolute;
     left: 0;
     right: 0;
     bottom: 5px;
-    display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 20px;
@@ -55,9 +56,7 @@ html {
     font-family: Arial, Helvetica, sans-serif;
     color: black;
     font-size: medium;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    text-align: center;
     padding-top: 40px;
 }
 
@@ -65,9 +64,6 @@ html {
     font-family: Arial, Helvetica, sans-serif;
     color: black;
     font-size: medium;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     margin-top: 0;
 }
 
@@ -75,13 +71,10 @@ html {
     font-family: Arial, Helvetica, sans-serif;
     color: black;
     font-size: medium;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    padding-left: 120px;
 }
 
 .quote-card {
-    position: relative;
     width: 400px;
     margin: 30px auto;
     padding: 20px;
@@ -92,8 +85,7 @@ html {
 }
 
 .game-instructions {
-    display: flex;
-    justify-content: center;
+    text-align: center;
     align-items: center;
     color:black;
     font-family: Arial, Helvetica, sans-serif;
@@ -101,15 +93,14 @@ html {
 }
 
 .game-title {
-     display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     color:black;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .game-info {
-   display: flex;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     color:black;
@@ -122,21 +113,17 @@ footer {
 }
 
 .copyright {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: row;
+    text-align: left;
 }
 
 .socials {
-    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    display: flex;
 }
 
 .contact {
-    display: flex;
     justify-content: flex-end;
     align-items: center;
     flex-direction: row;
@@ -146,6 +133,7 @@ footer {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    align-items: start;
 }
 
 .reflect-title {
@@ -159,10 +147,17 @@ footer {
     font-size: medium;
     font-family: Arial, Helvetica, sans-serif;
     color: black;
+    margin-top: 0;
 }
 
 .reflect-image {
 padding-right: 20px;
 width: 200px;
 height: auto;
+}
+
+.game-button {
+    position: relative;
+    left: 700px;
+
 }
