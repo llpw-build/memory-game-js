@@ -110,10 +110,16 @@ html {
 
 footer {
     background-color: white;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .copyright {
     text-align: left;
+    padding-left: 200px;
 }
 
 .socials {
@@ -121,12 +127,14 @@ footer {
     align-items: center;
     flex-direction: row;
     display: flex;
+    gap: 15px;
 }
 
 .contact {
     justify-content: flex-end;
-    align-items: center;
+    align-items: start;
     flex-direction: row;
+    display: flex;
 }
 
 .reflect-area {
