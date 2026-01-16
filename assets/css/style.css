@@ -167,5 +167,27 @@ height: auto;
 .game-button {
     position: relative;
     left: 700px;
+}
 
+.card {
+    background: navajowhite;
+    border: 2px solid #333;
+    border-radius: 12px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card.hidden {
+    background: #333;
+    color: transparent;
+}
+
+.card.matched {
+    opacity: 0.6;
+    cursor: default;
 }

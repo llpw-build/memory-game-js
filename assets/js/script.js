@@ -1,9 +1,11 @@
 const gameArea = document.getElementById("game-area");
-const cards = ["tree", "sun", "moon", "happy", "three", "cat", "dog"];
+const cards = ["tree", "sun", "moon", "happy", "three", "cat"];
 const deck = [...cards, ...cards];
 let firstCard = null;
 let secondCard = null;
 let isBusy = false;
+const movesSpan = document.getElementById("moves");
+let moves = 0;
 
 function shuffle(array) {
     for (let i = array.length -1; i > 0; i-- ) {
@@ -33,6 +35,8 @@ const button = document.createElement("button");
   if (secondCard === null) {
     secondCard = button;
     button.classList.remove("hidden");
+    moves++;
+    movesSpan.textContent = moves;
     if (firstCard.textContent === secondCard.textContent) {
       firstCard.classList.add("matched");
       secondCard.classList.add("matched");
