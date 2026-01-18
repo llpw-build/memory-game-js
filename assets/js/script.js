@@ -1,11 +1,20 @@
 const gameArea = document.getElementById("game-area");
 const cards = ["tree", "sun", "moon", "happy", "three", "cat"];
-const deck = [...cards, ...cards];
+let deck = [...cards, ...cards];
 let firstCard = null;
 let secondCard = null;
 let isBusy = false;
 const movesSpan = document.getElementById("moves");
 let moves = 0;
+const matchesSpan = document.getElementById("matches");
+let matches = 0;
+const scoreSpan = document.getElementById("score");
+let score = 0;
+const restartButton = document.getElementById("game-button");
+restartButton.onclick = resetGame;
+const timeLeft = document.getElementById("timer");
+let timer = 30;
+const gameMessage = document.getElementById("game-message")
 
 function shuffle(array) {
     for (let i = array.length -1; i > 0; i-- ) {
@@ -15,9 +24,20 @@ function shuffle(array) {
     return array;
 }
 
-shuffle(deck);
-
-for (let index = 0; index < deck.length; index++) {
+function resetGame () {
+    gameArea.innerHTML= "";
+    firstCard = null;
+    secondCard = null;
+    isBusy = false;
+    moves = 0;
+    matches = 0;
+    score = 0;
+    movesSpan.textContent = moves;
+    matchesSpan.textContent = matches;
+    scoreSpan.textContent = score;
+    deck = [...cards, ...cards];
+    shuffle(deck);
+    for (let index = 0; index < deck.length; index++) {
 const button = document.createElement("button");
     button.classList.add("card");
     button.classList.add("hidden")
@@ -40,6 +60,10 @@ const button = document.createElement("button");
     if (firstCard.textContent === secondCard.textContent) {
       firstCard.classList.add("matched");
       secondCard.classList.add("matched");
+      score += 3;
+      scoreSpan.textContent = score;
+      matches++;
+      matchesSpan.textContent = matches;
       firstCard = null;
       secondCard = null;
       return;
@@ -55,3 +79,17 @@ const button = document.createElement("button");
   }
 };
 }
+
+let startTimer = setInterval(function() {
+    timer--;
+    timeLeft.textContent = timer;
+    if (timer <= 0) {
+        timeLeft.innerHTML = 0;
+        gameMessage.innerHTML="Game over. Try Again.";
+        clearInterval(startTimer);
+        return;
+    }
+}, 1000);
+
+
+resetGame();
