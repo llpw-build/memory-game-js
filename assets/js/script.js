@@ -15,6 +15,8 @@ restartButton.onclick = resetGame;
 const timeLeft = document.getElementById("timer");
 let timer = 30;
 const gameMessage = document.getElementById("game-message")
+let timerStarted = false;
+let startTimer = null;
 
 function shuffle(array) {
     for (let i = array.length -1; i > 0; i-- ) {
@@ -25,6 +27,12 @@ function shuffle(array) {
 }
 
 function resetGame () {
+    clearInterval(startTimer);
+    startTimer = null;
+    timer = 30;
+    timeLeft.textContent = timer;
+    timerStarted = false;
+    gameMessage.innerHTML= "";
     gameArea.innerHTML= "";
     firstCard = null;
     secondCard = null;
@@ -47,6 +55,19 @@ const button = document.createElement("button");
   if (isBusy) return;
   if (button === firstCard) return;
   if (!button.classList.contains("hidden")) return;
+     if (timerStarted === false) {
+    timerStarted = true;
+    startTimer = setInterval(function() {
+    timer--;
+    timeLeft.textContent = timer;
+    if (timer <= 0) {
+        timeLeft.innerHTML = 0;
+        gameMessage.innerHTML="Game over. Try Again.";
+        clearInterval(startTimer);
+        return;
+    }
+}, 1000);
+    };
   if (firstCard === null) {
     firstCard = button;
     button.classList.remove("hidden");
@@ -79,17 +100,6 @@ const button = document.createElement("button");
   }
 };
 }
-
-let startTimer = setInterval(function() {
-    timer--;
-    timeLeft.textContent = timer;
-    if (timer <= 0) {
-        timeLeft.innerHTML = 0;
-        gameMessage.innerHTML="Game over. Try Again.";
-        clearInterval(startTimer);
-        return;
-    }
-}, 1000);
 }
 
 resetGame();
