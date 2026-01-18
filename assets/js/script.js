@@ -90,6 +90,6 @@ let startTimer = setInterval(function() {
         return;
     }
 }, 1000);
-
+}
 
 resetGame();
