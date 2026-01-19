@@ -17,6 +17,7 @@ let timer = 30;
 const gameMessage = document.getElementById("game-message")
 let timerStarted = false;
 let startTimer = null;
+let isGameOver = false;
 
 function shuffle(array) {
     for (let i = array.length -1; i > 0; i-- ) {
@@ -27,6 +28,7 @@ function shuffle(array) {
 }
 
 function resetGame () {
+    isGameOver = false;
     clearInterval(startTimer);
     startTimer = null;
     timer = 30;
@@ -52,6 +54,7 @@ const button = document.createElement("button");
     button.textContent= deck[index];
     gameArea.append(button);
     button.onclick = function () {
+  if (isGameOver) return;
   if (isBusy) return;
   if (button === firstCard) return;
   if (!button.classList.contains("hidden")) return;
@@ -64,6 +67,7 @@ const button = document.createElement("button");
         timeLeft.innerHTML = 0;
         gameMessage.innerHTML="Game over. Try Again.";
         clearInterval(startTimer);
+        isGameOver = true;
         return;
     }
 }, 1000);
@@ -85,6 +89,20 @@ const button = document.createElement("button");
       scoreSpan.textContent = score;
       matches++;
       matchesSpan.textContent = matches;
+      if (matches === cards.length) {
+        firstCard = null;
+        secondCard = null;
+        isGameOver = true;
+        clearInterval(startTimer);
+        gameMessage.innerHTML="Congratulations! You have won!"
+        const winscore = {
+            moves,
+            score,
+            timeLeft: timer,
+        }
+        JSON.stringify(winscore);
+        return;
+      }
       firstCard = null;
       secondCard = null;
       return;
