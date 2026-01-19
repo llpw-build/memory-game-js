@@ -191,3 +191,12 @@ height: auto;
     opacity: 0.6;
     cursor: default;
 }
+
+.active {
+    
+    text-decoration: underline;
+}
+
+.non-active {
+    text-decoration: none;
+}
