@@ -22,6 +22,26 @@ const highScores = document.getElementById("highscores");
 const highScoreskey = "highscores";
 const maxScoresList = 5;
 
+function addHighScore(newScore) {
+  const scores = loadHighScores;
+score.push(newScore);
+
+scores.sort((a,b) => (b.score - a.score) || (b.timeLeft - a.timeLeft));
+
+const trimmed = scores.slice(0, maxScoresList);
+saveHighScores(trimmed);
+return trimmed;
+}
+
+function loadHighScores() {
+  const saved = localStorage.getItem(highScoreskey);
+  return saved ? JSON.parse(saved) : [];
+}
+
+function saveHighScores(scores) {
+  localStorage.setItem(highScoreskey, JSON.stringify(scores));
+}
+
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const randomIndex = Math.floor(Math.random() * (i + 1));
