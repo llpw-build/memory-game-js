@@ -42,6 +42,28 @@ function saveHighScores(scores) {
   localStorage.setItem(highScoreskey, JSON.stringify(scores));
 }
 
+function renderHighScores() {
+  if (!highScores) return;
+
+  const scores = loadHighScores();
+  highScores.innerHTML="";
+  
+  if (scores.length === 0) {
+    const li = document.createElement("li");
+    li.textContent = "No high-scores yet! Win a game!"
+    highScores.appendChild(li);
+    return;
+  }
+
+  scores.forEach((s, i) => {
+    const li = document.createElement("li");
+    li.textContent= `#${i + 1} — Score: ${s.score} | Time Left: ${s.timeLeft}s | Moves: ${s.moves}`;
+    highScores.appendChild(li);
+  });
+    
+  };
+
+
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const randomIndex = Math.floor(Math.random() * (i + 1));
