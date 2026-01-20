@@ -18,6 +18,9 @@ const gameMessage = document.getElementById("game-message");
 let timerStarted = false;
 let startTimer = null;
 let isGameOver = false;
+const highScores = document.getElementById("highscores");
+const highScoreskey = "highscores";
+const maxScoresList = 5;
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
