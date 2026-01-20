@@ -1,113 +1,117 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Memoria Ludus</title>
+  </head>
+  <body>
+    <header>
+      <div class="banner">
+        <div class="banner-text">
+          <h1>Memoria Ludus</h1>
+          <h3>Test your memory. Beat the test.</h3>
+        </div>
+        <img
+          src="assets/images/5e1ffdf9-c935-4bcd-9419-d808e4049bf1-md.jpeg"
+          alt="banner"
+          class="banner-img"
         />
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="assets/css/style.css" />
-        <title>Memoria Ludus</title>
-    </head>
-    <body>
-        <header>
-        <div class="banner">
-            <div class="banner-text">
-            <h1>Memoria Ludus</h1>
-            <h3>Test your memory. Beat the test.</h3>
-            </div>
-            <img
-            src="assets/images/5e1ffdf9-c935-4bcd-9419-d808e4049bf1-md.jpeg"
-            alt="banner"
-            class="banner-img"
-            />
-            <nav class="menu">
-            <a href="index.html" class="active">Home</a>
-            <a href="high-scores.html" class="non-active">High Scores</a>
-            <a href="faq.html" class="non-active">FAQ</a>
-            </nav>
-        </div>
-        <div class="introduction">
-            <h2>
-            Welcome to Memoria Ludus! Test your memory by taking part in a simple
-            game. Will you remember to be victorius?
-            </h2>
-        </div>
-        </header>
-
-        <main>
-        <div class="quote-card">
-            <blockquote class="quote">
-            <p>"Nothing is ever really lost to us as long as we remember it."</p>
-            </blockquote>
-            <cite class="cite">L.M. Montgomery</cite>
-        </div>
-        
-
-        <h2 class="reflect-title">Why a memory game?</h2>
-        <div class="reflect-area">
-        <p class="reflect-text">
-            Memory games, have lots of benefits, especially if we start them at a
-            young age. Not only do memory games improve cognitive function, recall
-            and development, but they can also help to improve concentration,
-            creativity and problem-solving skills (wow)! Memory games have been
-            around for a while now, with their roots in ancient times, however, they
-            were modernised by Christopher Louis Pelman, a British psychologist of
-            early 20th century, who devised a game called the Pelmanism principle.
-            This is the game we know today and is also known as Concentration,
-            Shinkei-suijaku, Pexeso and Pairs. So why not continue scrolling down to
-            the game to hone these skills and give your brain a boost.
-        </p>
-        
-        <img class="reflect-image" src="assets/images/Louis_Christopher_Pelman_-_portrait.jpg" alt="Christopher Louis Pelman">
-        </div>
-
-        <section class="memory-game">
-            <h2 class="game-title">The Game</h2>
-
-            <p class="game-instructions">
-            You have 30 seconds to memorise the position of the cards and then
-            correctly match the cards to their locations. Each card correctly
-            matched is worth 3 points.
-            </p>
-
-            <div class="game-info">
-            <p>Moves:<span id="moves">0</span></p>
-            <p>Matches:<span id="matches">0</span></p>
-            <p>Score:<span id="score">0</span></p>
-            <p>Time remaining:<span id="timer">30</span></p>
-            </div>
-
-            <button class="game-button" id="game-button" type="button">
-            Restart game
-            </button>
-
-            <div class="game-area" id="game-area"></div>
-            <p class="game-message" id="game-message" aria-live="polite"></p>
-        </section>
-        </main>
-
-        <footer>
-        <nav class="socials">
-            <a href="https://www.instagram.com" target="_blank"
-            ><i class="fa-brands fa-instagram"></i
-            ></a>
-            <a href="https://www.twitter.com" target="_blank"
-            ><i class="fa-brands fa-twitter"></i
-            ></a>
-            <a href="https://www.facebook.com" target="_blank"
-            ><i class="fa-brands fa-facebook"></i
-            ></a>
+        <nav class="menu">
+          <a href="index.html" class="active">Home</a>
+          <a href="high-scores.html" class="non-active">High Scores</a>
+          <a href="faq.html" class="non-active">FAQ</a>
         </nav>
+      </div>
+      <div class="introduction">
+        <h2>
+          Welcome to Memoria Ludus! Test your memory by taking part in a simple
+          game. Will you remember to be victorius?
+        </h2>
+      </div>
+    </header>
 
-        <p class="copyright">Memoria Ludus 2026©</p>
+    <main>
+      <div class="quote-card">
+        <blockquote class="quote">
+          <p>"Nothing is ever really lost to us as long as we remember it."</p>
+        </blockquote>
+        <cite class="cite">L.M. Montgomery</cite>
+      </div>
 
-        <section class="contact">
-            <p>Contact us:</p>
-            <p>Email: MemoriaLudus@gmail.com</p>
-        </section>
-        </footer>
-        <script src="assets/js/script.js"></script>
-    </body>
-    </html>
+      <h2 class="reflect-title">Why a memory game?</h2>
+      <div class="reflect-area">
+        <p class="reflect-text">
+          Memory games, have lots of benefits, especially if we start them at a
+          young age. Not only do memory games improve cognitive function, recall
+          and development, but they can also help to improve concentration,
+          creativity and problem-solving skills (wow)! Memory games have been
+          around for a while now, with their roots in ancient times, however,
+          they were modernised by Christopher Louis Pelman, a British
+          psychologist of early 20th century, who devised a game called the
+          Pelmanism principle. This is the game we know today and is also known
+          as Concentration, Shinkei-suijaku, Pexeso and Pairs. So why not
+          continue scrolling down to the game to hone these skills and give your
+          brain a boost.
+        </p>
+
+        <img
+          class="reflect-image"
+          src="assets/images/Louis_Christopher_Pelman_-_portrait.jpg"
+          alt="Christopher Louis Pelman"
+        />
+      </div>
+
+      <section class="memory-game">
+        <h2 class="game-title">The Game</h2>
+
+        <p class="game-instructions">
+          You have 30 seconds to memorise the position of the cards and then
+          correctly match the cards to their locations. Each card correctly
+          matched is worth 3 points.
+        </p>
+
+        <div class="game-info">
+          <p>Moves:<span id="moves">0</span></p>
+          <p>Matches:<span id="matches">0</span></p>
+          <p>Score:<span id="score">0</span></p>
+          <p>Time remaining:<span id="timer">30</span></p>
+        </div>
+
+        <button class="game-button" id="game-button" type="button">
+          Restart game
+        </button>
+
+        <div class="game-area" id="game-area"></div>
+        <p class="game-message" id="game-message" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer>
+      <nav class="socials">
+        <a href="https://www.instagram.com" target="_blank"
+          ><i class="fa-brands fa-instagram"></i
+        ></a>
+        <a href="https://www.twitter.com" target="_blank"
+          ><i class="fa-brands fa-twitter"></i
+        ></a>
+        <a href="https://www.facebook.com" target="_blank"
+          ><i class="fa-brands fa-facebook"></i
+        ></a>
+      </nav>
+
+      <p class="copyright">Memoria Ludus 2026©</p>
+
+      <section class="contact">
+        <p>Contact us:</p>
+        <p>Email: MemoriaLudus@gmail.com</p>
+      </section>
+    </footer>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
