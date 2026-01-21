@@ -34,12 +34,12 @@
   }
 
   function loadHighScores() {
-    const saved = localStorage.getItem(highScoreskey);
+    const saved = localStorage.getItem(highScoresKey);
     return saved ? JSON.parse(saved) : [];
   }
 
   function saveHighScores(scores) {
-    localStorage.setItem(highScoreskey, JSON.stringify(scores));
+    localStorage.setItem(highScoresKey, JSON.stringify(scores));
   }
 
   function renderHighScores() {
