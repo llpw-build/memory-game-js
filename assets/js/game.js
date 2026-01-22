@@ -1,69 +1,46 @@
-  const gameArea = document.getElementById("game-area");
+// Game logic
+
+// Get the container
+const gameArea = document.getElementById("game-area");
+
+// Only run code is game is on the current page
+if (gameArea) {
   const cards = ["tree", "sun", "moon", "happy", "three", "cat"];
+
+  // Duplicate cards to make pairs
   let deck = [...cards, ...cards];
+
+  // Track what pair of cards are flipped
   let firstCard = null;
   let secondCard = null;
+
+  // Block clicks during animations
   let isBusy = false;
+
+  // Stats for game
   const movesSpan = document.getElementById("moves");
   let moves = 0;
+
   const matchesSpan = document.getElementById("matches");
   let matches = 0;
+
   const scoreSpan = document.getElementById("score");
   let score = 0;
+
+  // Restart button
   const restartButton = document.getElementById("game-button");
-  restartButton.onclick = resetGame;
+
+  // Timer
   const timeLeft = document.getElementById("timer");
   let timer = 30;
+
   const gameMessage = document.getElementById("game-message");
+
   let timerStarted = false;
   let startTimer = null;
   let isGameOver = false;
-  const highScores = document.getElementById("highscores");
-  const highScoresKey = "highscores";
-  const maxScoresList = 5;
 
-  function addHighScore(newScore) {
-    const scores = loadHighScores();
-  scores.push(newScore);
-
-  scores.sort((a,b) => (b.score - a.score) || (b.timeLeft - a.timeLeft));
-
-  const trimmed = scores.slice(0, maxScoresList);
-  saveHighScores(trimmed);
-  return trimmed;
-  }
-
-  function loadHighScores() {
-    const saved = localStorage.getItem(highScoresKey);
-    return saved ? JSON.parse(saved) : [];
-  }
-
-  function saveHighScores(scores) {
-    localStorage.setItem(highScoresKey, JSON.stringify(scores));
-  }
-
-  function renderHighScores() {
-    if (!highScores) return;
-
-    const scores = loadHighScores();
-    highScores.innerHTML="";
-    
-    if (scores.length === 0) {
-      const li = document.createElement("li");
-      li.textContent = "No high-scores yet! Win a game!"
-      highScores.appendChild(li);
-      return;
-    }
-
-    scores.forEach((s, i) => {
-      const li = document.createElement("li");
-      li.textContent= `#${i + 1} — Score: ${s.score} | Time Left: ${s.timeLeft}s | Moves: ${s.moves}`;
-      highScores.appendChild(li);
-    });
-      
-    };
-
-
+  // Shuffle the deck
   function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const randomIndex = Math.floor(Math.random() * (i + 1));
@@ -72,89 +49,133 @@
     return array;
   }
 
+  // Reset the game
   function resetGame() {
     isGameOver = false;
+
     clearInterval(startTimer);
     startTimer = null;
+
     timer = 30;
-    timeLeft.textContent = timer;
+    if (timeLeft) timeLeft.textContent = timer;
+
     timerStarted = false;
-    gameMessage.innerHTML = "";
+    if (gameMessage) gameMessage.innerHTML = "";
+
     gameArea.innerHTML = "";
     firstCard = null;
     secondCard = null;
     isBusy = false;
+
     moves = 0;
     matches = 0;
     score = 0;
-    movesSpan.textContent = moves;
-    matchesSpan.textContent = matches;
-    scoreSpan.textContent = score;
+
+    if (movesSpan) movesSpan.textContent = moves;
+    if (matchesSpan) matchesSpan.textContent = matches;
+    if (scoreSpan) scoreSpan.textContent = score;
+
     deck = [...cards, ...cards];
     shuffle(deck);
-    renderHighScores();
+
+    // Update high scores if shown on this page
+    if (typeof renderHighScores === "function") {
+      renderHighScores();
+    }
+
+    // Create card buttons
     for (let index = 0; index < deck.length; index++) {
       const button = document.createElement("button");
-      button.classList.add("card");
-      button.classList.add("hidden");
+      button.classList.add("card", "hidden");
       button.textContent = deck[index];
       gameArea.append(button);
+
+      // Handle card clicks
       button.onclick = function () {
         if (isGameOver) return;
         if (isBusy) return;
         if (button === firstCard) return;
         if (!button.classList.contains("hidden")) return;
+
+        // Start timer on first click
         if (timerStarted === false) {
           timerStarted = true;
+
           startTimer = setInterval(function () {
             timer--;
-            timeLeft.textContent = timer;
+            if (timeLeft) timeLeft.textContent = timer;
+
             if (timer <= 0) {
-              timeLeft.innerHTML = 0;
-              gameMessage.innerHTML = "Game over. Try Again.";
+              if (timeLeft) timeLeft.textContent = 0;
+              if (gameMessage) gameMessage.innerHTML = "Game over. Try Again.";
               clearInterval(startTimer);
               isGameOver = true;
               return;
             }
           }, 1000);
         }
+
+        // First card flip
         if (firstCard === null) {
           firstCard = button;
           button.classList.remove("hidden");
           return;
         }
+
+        // Second card flip
         if (secondCard === null) {
           secondCard = button;
           button.classList.remove("hidden");
+
           moves++;
-          movesSpan.textContent = moves;
+          if (movesSpan) movesSpan.textContent = moves;
+
+          // Check for a match
           if (firstCard.textContent === secondCard.textContent) {
             firstCard.classList.add("matched");
             secondCard.classList.add("matched");
+
             score += 3;
-            scoreSpan.textContent = score;
+            if (scoreSpan) scoreSpan.textContent = score;
+
             matches++;
-            matchesSpan.textContent = matches;
+            if (matchesSpan) matchesSpan.textContent = matches;
+
+            // Win condition
             if (matches === cards.length) {
               firstCard = null;
               secondCard = null;
+
               isGameOver = true;
               clearInterval(startTimer);
-              gameMessage.innerHTML = "Congratulations! You have won!";
+              if (gameMessage)
+                gameMessage.innerHTML = "Congratulations! You have won!";
+
               const winscore = {
                 moves: moves,
                 score: score,
                 timeLeft: timer,
-                playedAt: new Date().toISOString()
+                playedAt: new Date().toISOString(),
               };
-              addHighScore(winscore);
-              renderHighScores();
+
+              // Save and update high scores
+              if (typeof addHighScore === "function") {
+                addHighScore(winscore);
+              }
+
+              if (typeof renderHighScores === "function") {
+                renderHighScores();
+              }
+
               return;
             }
+
             firstCard = null;
             secondCard = null;
             return;
           }
+
+          // No match, hide cards again
           isBusy = true;
           setTimeout(function () {
             firstCard.classList.add("hidden");
@@ -168,4 +189,9 @@
     }
   }
 
+  // Restart game when button is clicked
+  if (restartButton) restartButton.onclick = resetGame;
+
+  // Start the game on page load
   resetGame();
+}
