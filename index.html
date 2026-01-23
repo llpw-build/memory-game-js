@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    
     <!-- Link font awesome for social media icons -->
     <link
       rel="stylesheet"
@@ -20,25 +21,29 @@
   <body>
     <header>
       <div class="banner">
+
         <!-- Text for banner -->
         <div class="banner-text">
           <h1>Memoria Ludus</h1>
           <h3>Test your memory. Beat the test.</h3>
         </div>
+
         <!-- Banner image -->
         <img
-          src="assets/images/5e1ffdf9-c935-4bcd-9419-d808e4049bf1-md.jpeg"
+          src="assets/images/9d15e23f-407f-4e2e-a6dc-422e8455a443-md.jpeg"
           alt="banner"
           class="banner-img"
         />
+
         <!-- Menu for different html pages -->
         <nav class="menu">
           <a href="index.html" class="active">Home</a>
-          <a href="high-scores.html" class="non-active">High Scores</a>
           <a href="how-to.html" class="non-active">How To Play</a>
+          <a href="high-scores.html" class="non-active">High Scores</a>
         </nav>
       </div>
       <div class="introduction">
+
         <!-- Introduction text for the user -->
         <h2>
           Welcome to Memoria Ludus! Test your memory by taking part in a simple
@@ -56,9 +61,11 @@
         </blockquote>
         <cite class="cite">L.M. Montgomery</cite>
       </div>
+
       <!-- Indepth section -->
       <h2 class="reflect-title">Why a memory game?</h2>
       <div class="reflect-area">
+
         <!-- Indepth text and image layout -->
         <p class="reflect-text">
           Memory games, have lots of benefits, especially if we start them at a
@@ -80,15 +87,18 @@
           alt="Christopher Louis Pelman"
         />
       </div>
+
       <!-- Main game section -->
       <section class="memory-game">
         <h2 class="game-title">The Game</h2>
+
       <!-- Simple game instructions (brief) -->
         <p class="game-instructions">
           You have 30 seconds to memorise the position of the cards and then
           correctly match the cards to their locations. Each card correctly
           matched is worth 3 points.
         </p>
+
       <!-- Game statistics (live) -->
         <div class="game-info">
           <p>Moves:<span id="moves">0</span></p>
@@ -96,10 +106,12 @@
           <p>Score:<span id="score">0</span></p>
           <p>Time remaining:<span id="timer">30</span></p>
         </div>
+
       <!-- Game restart button -->
         <button class="game-button" id="game-button" type="button">
           Restart game
         </button>
+
       <!-- Game message section -->
         <div class="game-area" id="game-area"></div>
         <p class="game-message" id="game-message" aria-live="polite"></p>
@@ -107,6 +119,7 @@
     </main>
 
     <footer>
+
       <!-- Social media icons and links -->
       <nav class="socials">
         <a href="https://www.instagram.com" target="_blank"
@@ -119,14 +132,18 @@
           ><i class="fa-brands fa-facebook"></i
         ></a>
       </nav>
+
      <!-- Copyright -->
       <p class="copyright">Memoria Ludus 2026©</p>
+
      <!-- Contact section -->
       <section class="contact">
         <p>Contact us:</p>
         <p>Email: MemoriaLudus@gmail.com</p>
       </section>
     </footer>
+
+    <!-- Required JS file links -->
     <script src="assets/js/highscores.js"></script>
     <script src="assets/js/game.js"></script>
   </body>

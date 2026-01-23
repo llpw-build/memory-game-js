@@ -1,27 +1,32 @@
-.game-area {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin-top: 20px;
+/* Base styling */
+
+/* Change background and font styles across website */
+html {
+  background-color: aliceblue;
 }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+
+/* Banner and navigation */
 
 .banner {
   position: relative;
   height: 400px;
   width: 100%;
-  display: flex;
 }
 
+/* Banner image */
 .banner-img {
   height: 100%;
   width: 100%;
   box-shadow: 0px 12px 10px black;
 }
 
-html {
-  background-color: aliceblue;
-}
-
+/* Banner text */
 .banner-text {
   display: flex;
   position: absolute;
@@ -31,49 +36,47 @@ html {
   align-items: center;
   color: black;
   font-size: xx-large;
-  font-family: Arial, Helvetica, sans-serif;
   background: rgba(226, 222, 222, 0.1);
 }
 
+/* Menu styling */
 .menu {
   display: flex;
   position: absolute;
   left: 0;
   right: 0;
   bottom: 5px;
-  flex-direction: row;
   justify-content: center;
   gap: 20px;
 }
 
 .menu a {
   font-size: large;
-  font-family: Arial, Helvetica, sans-serif;
   color: black;
+  transition: all 0.3s ease;
 }
 
+.menu a:hover {
+  color:coral
+}
+
+/* Active and non-active for menu */
+.active {
+  text-decoration: underline;
+}
+
+.non-active {
+  text-decoration: none;
+}
+
+/* Introduction text styling */
 .introduction {
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
   font-size: medium;
   text-align: center;
   padding-top: 40px;
 }
 
-.quote {
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
-  font-size: medium;
-  margin-top: 0;
-}
-
-.cite {
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
-  font-size: medium;
-  padding-left: 120px;
-}
-
+/* Quote card styling */
 .quote-card {
   width: 400px;
   margin: 30px auto;
@@ -82,93 +85,98 @@ html {
   background-color: white;
   border-radius: 15%;
   box-shadow: 0px 0px 30px gray;
+  transition: all 0.3s ease;
 }
 
+.quote-card:hover {
+  transform: scale(1.20);
+}
+
+/* Quote styling */
+.quote {
+  font-size: medium;
+  margin-top: 0;
+}
+
+/* Individual citation styling */
+.cite {
+  font-size: medium;
+  padding-left: 120px;
+}
+
+/* Reflection area styling */
+.reflect-area {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+
+/* Reflection title */
+.reflect-title {
+  padding-left: 20px;
+}
+
+/* Reflection text */
+.reflect-text {
+  padding-left: 20px;
+  font-size: medium;
+  margin-top: 0;
+}
+
+/* Reflection image */
+.reflect-image {
+  padding-right: 20px;
+  width: 200px;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.reflect-image:hover {
+  transform: scale(1.20);
+}
+
+/* Game area section */
+.game-area {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Game instructions */
 .game-instructions {
   text-align: center;
   align-items: center;
-  color: black;
-  font-family: Arial, Helvetica, sans-serif;
   font-size: medium;
 }
 
+/* Game title */
 .game-title {
   text-align: center;
-  color: black;
-  font-family: Arial, Helvetica, sans-serif;
+  transition: all 0.3s ease;
 }
 
+.game-title:hover {
+  color: coral;
+}
+
+/* Game information styling */
 .game-info {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  color: black;
-  font-family: Arial, Helvetica, sans-serif;
   gap: 12px;
 }
 
-footer {
-  background-color: white;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.copyright {
-  text-align: left;
-  padding-left: 200px;
-}
-
-.socials {
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  display: flex;
-  gap: 15px;
-}
-
-.contact {
-  justify-content: flex-end;
-  align-items: start;
-  flex-direction: row;
-  display: flex;
-}
-
-.reflect-area {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: start;
-}
-
-.reflect-title {
-  padding-left: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
-}
-
-.reflect-text {
-  padding-left: 20px;
-  font-size: medium;
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
-  margin-top: 0;
-}
-
-.reflect-image {
-  padding-right: 20px;
-  width: 200px;
-  height: auto;
-}
-
+/* Game restart button */
 .game-button {
-  position: relative;
-  left: 700px;
+  display: block;
+  margin: 15px auto;
 }
 
+/* Cards styling to be matched */
 .card {
   background: navajowhite;
   border: 2px solid #333;
@@ -179,39 +187,43 @@ footer {
   justify-content: center;
   cursor: pointer;
   user-select: none;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
+/* When card is flipped */
 .card.hidden {
   background: #333;
   color: transparent;
 }
 
+/* When card is matched */
 .card.matched {
   opacity: 0.6;
   cursor: default;
 }
 
-.active {
-  text-decoration: underline;
-}
+/* High scores and how to pages */
 
-.non-active {
-  text-decoration: none;
-}
-
+/* Centers content in a card */
 .highscore-card {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
   flex-direction: column;
   font-size: medium;
   padding-top: 40px;
   padding-bottom: 200px;
 }
 
+/* High score title styling */
+.highscore-title {
+  transition: all 0.3s ease;
+}
+
+.highscore-title:hover {
+  color: coral;
+}
+
+/* Highscore list layout */
 #highscores {
   display: flex;
   align-items: center;
@@ -219,16 +231,59 @@ footer {
   flex-direction: column;
 }
 
+/* How to card styling */
 .howto-card {
- width: 400px;
+ width: 500px;
   margin: 30px auto;
   padding: 20px;
   height: 420px;
   background-color: white;
   border-radius: 15%;
   box-shadow: 0px 0px 30px gray;
+  padding-left: 40px;
+  transition: all 0.3s ease;
 }
 
+.howto-card:hover {
+  transform: scale(1.20);
+}
+
+/* Adds spacing between the list points */
 .list {
 padding-top: 20px;
+}
+
+/* Footer styling */
+
+/* Footer layout */
+footer {
+  background-color: white;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Copyright styling */
+.copyright {
+  text-align: left;
+  padding-left: 200px;
+}
+
+/* Socials styling */
+.socials {
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  display: flex;
+  gap: 15px;
+}
+
+/* Contact styling */ 
+.contact {
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: row;
+  display: flex;
 }
