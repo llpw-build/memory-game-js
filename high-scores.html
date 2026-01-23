@@ -1,27 +1,41 @@
     <!DOCTYPE html>
     <html lang="en">
     <head>
+
+        <!--  Link to fontawesome for social media icons -->
         <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         />
         <meta charset="UTF-8" />
+
+        <!-- Make site responsive on different screen sizes -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Link to CSS stylesheet -->
         <link rel="stylesheet" href="assets/css/style.css" />
+
+        <!-- Title for browser -->
         <title>Memoria Ludus</title>
     </head>
     <body>
         <header>
+
+            <!-- Banner including image with text overlay -->
         <div class="banner">
             <div class="banner-text">
             <h1>Memoria Ludus</h1>
             <h3>Test your memory. Beat the test.</h3>
             </div>
+
+            <!-- Banner image -->
             <img
             src="assets/images/5e1ffdf9-c935-4bcd-9419-d808e4049bf1-md.jpeg"
             alt="banner"
             class="banner-img"
             />
+
+            <!-- Navigation menu to different pages -->
             <nav class="menu">
             <a href="index.html" class="non-active">Home</a>
             <a href="high-scores.html" class="active">High Scores</a>
@@ -30,13 +44,19 @@
         </div>
 
         <main>
+
+            <!-- Highscores card -->
             <div class="highscore-card">
+
+                <!-- Highscores title -->
             <h2 class="highscore-title">High Scores</h2>
             <ol id="highscores" class="quote-card"></ol>
             </div>
         </main>
       
         <footer>
+
+            <!-- Social media icons and links -->
         <nav class="socials">
             <a href="https://www.instagram.com" target="_blank"
             ><i class="fa-brands fa-instagram"></i
@@ -48,14 +68,19 @@
             ><i class="fa-brands fa-facebook"></i
             ></a>
         </nav>
+        
 
+        <!-- Copyright section -->
         <p class="copyright">Memoria Ludus 2026©</p>
 
+        <!-- Contact section -->
         <section class="contact">
             <p>Contact us:</p>
             <p>Email: MemoriaLudus@gmail.com</p>
         </section>
         </footer>
+
+        <!-- JS file link -->
         <script src="assets/js/highscores.js"></script>
     </body>
     </html>
