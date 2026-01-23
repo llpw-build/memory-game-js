@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Link font awesome for social media icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <meta charset="UTF-8" />
+
+    <!-- Site becomes responsive on different screen sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Link to my main css file -->
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Page title for browser -->
     <title>Memoria Ludus</title>
   </head>
   <body>
     <header>
       <div class="banner">
+        <!-- Text for banner -->
         <div class="banner-text">
           <h1>Memoria Ludus</h1>
           <h3>Test your memory. Beat the test.</h3>
         </div>
+        <!-- Banner image -->
         <img
           src="assets/images/5e1ffdf9-c935-4bcd-9419-d808e4049bf1-md.jpeg"
           alt="banner"
           class="banner-img"
         />
+        <!-- Menu for different html pages -->
         <nav class="menu">
           <a href="index.html" class="active">Home</a>
           <a href="high-scores.html" class="non-active">High Scores</a>
@@ -29,6 +39,7 @@
         </nav>
       </div>
       <div class="introduction">
+        <!-- Introduction text for the user -->
         <h2>
           Welcome to Memoria Ludus! Test your memory by taking part in a simple
           game. Will you remember to be victorius?
@@ -37,15 +48,18 @@
     </header>
 
     <main>
+
+      <!-- Quote and citation with card for page styling -->
       <div class="quote-card">
         <blockquote class="quote">
           <p>"Nothing is ever really lost to us as long as we remember it."</p>
         </blockquote>
         <cite class="cite">L.M. Montgomery</cite>
       </div>
-
+      <!-- Indepth section -->
       <h2 class="reflect-title">Why a memory game?</h2>
       <div class="reflect-area">
+        <!-- Indepth text and image layout -->
         <p class="reflect-text">
           Memory games, have lots of benefits, especially if we start them at a
           young age. Not only do memory games improve cognitive function, recall
@@ -59,40 +73,41 @@
           continue scrolling down to the game to hone these skills and give your
           brain a boost.
         </p>
-
+        
         <img
           class="reflect-image"
           src="assets/images/Louis_Christopher_Pelman_-_portrait.jpg"
           alt="Christopher Louis Pelman"
         />
       </div>
-
+      <!-- Main game section -->
       <section class="memory-game">
         <h2 class="game-title">The Game</h2>
-
+      <!-- Simple game instructions (brief) -->
         <p class="game-instructions">
           You have 30 seconds to memorise the position of the cards and then
           correctly match the cards to their locations. Each card correctly
           matched is worth 3 points.
         </p>
-
+      <!-- Game statistics (live) -->
         <div class="game-info">
           <p>Moves:<span id="moves">0</span></p>
           <p>Matches:<span id="matches">0</span></p>
           <p>Score:<span id="score">0</span></p>
           <p>Time remaining:<span id="timer">30</span></p>
         </div>
-
+      <!-- Game restart button -->
         <button class="game-button" id="game-button" type="button">
           Restart game
         </button>
-
+      <!-- Game message section -->
         <div class="game-area" id="game-area"></div>
         <p class="game-message" id="game-message" aria-live="polite"></p>
       </section>
     </main>
 
     <footer>
+      <!-- Social media icons and links -->
       <nav class="socials">
         <a href="https://www.instagram.com" target="_blank"
           ><i class="fa-brands fa-instagram"></i
@@ -104,9 +119,9 @@
           ><i class="fa-brands fa-facebook"></i
         ></a>
       </nav>
-
+     <!-- Copyright -->
       <p class="copyright">Memoria Ludus 2026©</p>
-
+     <!-- Contact section -->
       <section class="contact">
         <p>Contact us:</p>
         <p>Email: MemoriaLudus@gmail.com</p>
