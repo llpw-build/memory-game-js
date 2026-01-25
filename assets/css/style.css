@@ -268,7 +268,7 @@ footer {
 /* Copyright styling */
 .copyright {
   text-align: left;
-  padding-left: 200px;
+  padding-left: 150px;
 }
 
 /* Socials styling */
@@ -286,4 +286,46 @@ footer {
   align-items: flex-start;
   flex-direction: row;
   display: flex;
+}
+
+/* Styling for tablet style screen <768px */
+
+@media (max-width: 768px) {
+  .banner {
+    height: 200px;
+  }
+
+  .banner-text {
+    font-size: medium;
+  }
+  
+  .menu {
+    padding: 10px;
+    font-size: small;
+  }
+
+  .quote-card {
+    width: 50%;
+    max-width: 50%;
+  }
+
+  .howto-card {
+    width: 60%;
+    max-width: 60%;
+    height: auto;
+  }
+ /* make sure the hover does no touch sides or overlap on tablet size */
+  .howto-card:hover {
+    transform: scale(1.10);
+  }
+
+  .copyright {
+    padding-left: 80px;
+  }
+/* make sure game area is 3 columns not 4 */
+  .game-area {
+    grid-template-columns: repeat(3, 1fr);
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
