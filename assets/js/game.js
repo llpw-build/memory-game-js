@@ -107,7 +107,7 @@ if (gameArea) {
 
             if (timer <= 0) {
               if (timeLeft) timeLeft.textContent = 0;
-              if (gameMessage) gameMessage.innerHTML = "Game over. Try Again.";
+              if (gameMessage) gameMessage.innerHTML = "Game over. Time ran out.";
               clearInterval(startTimer);
               isGameOver = true;
               return;
