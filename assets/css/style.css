@@ -407,3 +407,12 @@ footer {
 }
 
 }
+
+/* Reduced motion option for users */
+@media (prefers-reduced-motion: reduce) {
+  .quote-card:hover,
+  .howto-card:hover,
+  .reflect-image:hover {
+    transform: none;
+  }
+}
