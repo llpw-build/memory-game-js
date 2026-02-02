@@ -41,16 +41,16 @@ if (gameArea) {
   let isGameOver = false;
 
   // Shuffle the deck
-  function shuffle(array) {
+  const shuffle = function (array) {
     for (let i = array.length - 1; i > 0; i--) {
       const randomIndex = Math.floor(Math.random() * (i + 1));
       [array[i], array[randomIndex]] = [array[randomIndex], array[i]];
     }
     return array;
-  }
+  };
 
   // Reset the game
-  function resetGame() {
+  const resetGame = function () {
     isGameOver = false;
 
     clearInterval(startTimer);
@@ -187,7 +187,7 @@ if (gameArea) {
         }
       };
     }
-  }
+  };
 
   // Restart game when button is clicked
   if (restartButton) restartButton.onclick = resetGame;
